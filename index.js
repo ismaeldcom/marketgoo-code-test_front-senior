@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const app = express()
 const port = 3000
 
@@ -48,6 +49,7 @@ Player.sync({ force: true }).then(() => {
 })
 
 // Middlewares
+app.use(cors())
 app.use(bodyParser.json())
 
 // PUBLIC ROUTE

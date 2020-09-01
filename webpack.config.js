@@ -34,5 +34,9 @@ module.exports = {
             }
         ]
     },
-    plugins: [new MiniCssExtractPlugin()]
+    plugins: [new MiniCssExtractPlugin()],
+    devServer: {
+        contentBase: './src',
+        hot: true
+    }
 }
