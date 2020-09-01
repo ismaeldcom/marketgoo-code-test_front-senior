@@ -1,8 +1,18 @@
+.form {
+    display: grid;
+}
+
+.button {
+    margin-top: var(--size-3);
+}
+
 @media (min-width: 768px) {
     .form {
-        display: grid;
         grid-template-columns: repeat(4, auto);
-        grid-gap: 1em;
-        align-items: end;
+        grid-gap: var(--size-4);
+    }
+
+    .button {
+        margin-top: calc(var(--size-7) - 2px);
     }
 }

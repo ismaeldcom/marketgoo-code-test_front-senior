@@ -18,10 +18,7 @@ const playersSlice = createSlice({
     initialState: [],
     extraReducers: {
         [getPlayers.fulfilled]: (state, { payload }) => payload,
-        [addPlayer.fulfilled]: (state, { payload }) => {
-            console.log(payload)
-            return [...state, payload]
-        },
+        [addPlayer.fulfilled]: (state, { payload }) => [...state, payload],
         [removePlayer.fulfilled]: (state, { payload }) =>
             state.filter(player => player.id !== payload.id)
     }

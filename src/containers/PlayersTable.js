@@ -16,7 +16,6 @@ const actions = [{ value: 'remove', label: 'Remove' }]
 const PlayersTable = () => {
     const dispatch = useDispatch()
     const players = useSelector(state => state.players)
-    const [selected, SetSelected] = useState([])
 
     useEffect(() => {
         dispatch(getPlayers())
@@ -39,7 +38,7 @@ const PlayersTable = () => {
                 </thead>
                 <tbody>
                     {players.map(player => (
-                        <TableRow key={player.id}>
+                        <TableRow key={player.id || player.name}>
                             <TableCell>{player.name}</TableCell>
                             <TableCell>{player.team}</TableCell>
                             <TableCell variant='numeric'>
@@ -59,8 +58,6 @@ const PlayersTable = () => {
                     ))}
                 </tbody>
             </Table>
-            {/* <h2 class='ola-callout'>Actions</h2> */}
-            {/* <span>{selected.length} Selected</span> */}
         </>
     )
 }

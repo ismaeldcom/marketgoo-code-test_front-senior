@@ -1,72 +1,69 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Input, Field, Button, ButtonGroup } from '@marketgoo/ola'
+import { useForm } from 'react-form'
+import { Button } from '@marketgoo/ola'
+import InputField from 'components/InputField'
 import { addPlayer } from 'store/players'
+import validation from 'helpers/validation'
 import styles from './PlayerForm.module.css'
-
-const initialPlayer = {
-    name: undefined,
-    team: undefined,
-    score: undefined
-}
 
 const PlayerForm = () => {
     const dispatch = useDispatch()
-    const [player, setPlayer] = useState(initialPlayer)
 
-    const handleChange = ({ target }) =>
-        setPlayer({ ...player, [target.name]: target.value })
-
-    const handleSubmit = async event => {
-        event.preventDefault()
-        const { name, team, score } = player
-        if (!name || !team || !score) return
-        try {
-            await dispatch(addPlayer(player))
-            setPlayer(initialPlayer)
-        } catch (error) {
-            console.log(error)
+    const defaultValues = React.useMemo(
+        () => ({
+            name: '',
+            team: '',
+            score: ''
+        }),
+        []
+    )
+    const {
+        Form,
+        meta: { canSubmit }
+    } = useForm({
+        defaultValues,
+        onSubmit: async (values, instance) => {
+            try {
+                await dispatch(addPlayer(values))
+                instance.reset()
+            } catch (error) {
+                console.log(error)
+            }
         }
-    }
+    })
 
     return (
-        <form className={styles.form}>
-            <Field id='playerName' label='Name'>
-                <Input
-                    name='name'
-                    placeholder='Player name'
-                    onChange={handleChange}
-                    required
-                />
-            </Field>
-            <Field id='playerTeam' label='Team'>
-                <Input
-                    name='team'
-                    placeholder='Team name'
-                    onChange={handleChange}
-                    required
-                />
-            </Field>
-            <Field id='teamScore' label='Score'>
-                <Input
-                    name='score'
-                    type='number'
-                    placeholder='Team score'
-                    min='0'
-                    onChange={handleChange}
-                    required
-                />
-            </Field>
-            <ButtonGroup variant='reversed'>
-                <Button
-                    variant='primary'
-                    className='ola_field-input'
-                    onClick={handleSubmit}
-                >
-                    Add
-                </Button>
-            </ButtonGroup>
-        </form>
+        <Form className={styles.form}>
+            <InputField
+                field='name'
+                label='Name'
+                placeholder='Player name'
+                validate={validation.required}
+            />
+            <InputField
+                field='team'
+                label='Team'
+                placeholder='Team name'
+                validate={validation.required}
+            />
+            <InputField
+                field='score'
+                label='Score'
+                type='number'
+                placeholder='Team Score'
+                validate={validation.required}
+                min='0'
+            />
+            <Button
+                type='submit'
+                variant='primary'
+                className={styles.button}
+                disabled={!canSubmit}
+            >
+                Add
+            </Button>
+        </Form>
     )
 }
 
