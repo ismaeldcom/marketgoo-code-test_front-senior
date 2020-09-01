@@ -1,3 +1,12 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = process.env.API_URL
+const api = axios.create({
+    baseURL: process.env.API_URL
+})
+
+api.interceptors.response.use(
+    response => response.data.data,
+    error => Promise.reject(error)
+)
+
+export default api

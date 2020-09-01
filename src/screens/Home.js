@@ -1,11 +1,15 @@
 import React from 'react'
-import List from 'components/List'
+import PlayerForm from 'containers/PlayerForm'
+import PlayersTable from 'containers/PlayersTable'
 
-const Root = () => (
-    <>
-        <h1>League Champion</h1>
-        <List />
-    </>
-)
+const Home = () => {
+    return (
+        <>
+            <h1>League Champion</h1>
+            <PlayerForm />
+            <PlayersTable />
+        </>
+    )
+}
 
-export default Root
+export default Home
