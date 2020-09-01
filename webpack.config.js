@@ -6,7 +6,10 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     resolve: {
-        modules: [path.resolve(__dirname, 'src'), 'node_modules']
+        modules: [
+            path.resolve(__dirname, 'src'),
+            path.resolve(__dirname, 'node_modules')
+        ]
     },
     output: {
         path: path.resolve(__dirname, 'public'),

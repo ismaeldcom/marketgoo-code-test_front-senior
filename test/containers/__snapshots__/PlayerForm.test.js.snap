@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshots PlayerForm renders 1`] = `
+<form
+  className="form"
+  disabled={false}
+  onSubmit={[Function]}
+>
+  <div
+    className="ola_field"
+  >
+    <label
+      className="ola_field-label"
+      htmlFor="field-name"
+    >
+      Name
+    </label>
+    <div
+      className="ola_field-input"
+    >
+      <input
+        className="ola_input"
+        disabled={false}
+        id="field-name"
+        label="Name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Player name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="ola_field"
+  >
+    <label
+      className="ola_field-label"
+      htmlFor="field-team"
+    >
+      Team
+    </label>
+    <div
+      className="ola_field-input"
+    >
+      <input
+        className="ola_input"
+        disabled={false}
+        id="field-team"
+        label="Team"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Team name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="ola_field"
+  >
+    <label
+      className="ola_field-label"
+      htmlFor="field-score"
+    >
+      Score
+    </label>
+    <div
+      className="ola_field-input"
+    >
+      <input
+        className="ola_input"
+        disabled={false}
+        id="field-score"
+        label="Score"
+        min="0"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Team Score"
+        type="number"
+        value=""
+      />
+    </div>
+  </div>
+  <button
+    className="ola_button is-primary button"
+    disabled={false}
+    type="submit"
+  >
+    <span
+      className="ola_button-text"
+    >
+      Add
+    </span>
+  </button>
+</form>
+`;
