@@ -33,7 +33,15 @@ module.exports = {
                             publicPath: '/public/'
                         }
                     },
-                    'css-loader'
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                auto: true,
+                                localIdentName: '[local]_[hash:base64:5]'
+                            }
+                        }
+                    }
                 ]
             }
         ]

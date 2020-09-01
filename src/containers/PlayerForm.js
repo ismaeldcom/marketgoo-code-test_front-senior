@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Input, Field, Button } from '@marketgoo/ola'
+import { Input, Field, Button, ButtonGroup } from '@marketgoo/ola'
 import { addPlayer } from 'store/players'
+import styles from './PlayerForm.module.css'
 
 const initialPlayer = {
     name: undefined,
@@ -29,7 +30,7 @@ const PlayerForm = () => {
     }
 
     return (
-        <form>
+        <form className={styles.form}>
             <Field id='playerName' label='Name'>
                 <Input
                     name='name'
@@ -56,9 +57,15 @@ const PlayerForm = () => {
                     required
                 />
             </Field>
-            <Button variant='primary' onClick={handleSubmit}>
-                Add
-            </Button>
+            <ButtonGroup variant='reversed'>
+                <Button
+                    variant='primary'
+                    className='ola_field-input'
+                    onClick={handleSubmit}
+                >
+                    Add
+                </Button>
+            </ButtonGroup>
         </form>
     )
 }
