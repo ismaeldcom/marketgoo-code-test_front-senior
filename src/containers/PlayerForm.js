@@ -20,7 +20,7 @@ const PlayerForm = () => {
     )
     const {
         Form,
-        meta: { canSubmit }
+        meta: { canSubmit, isSubmitting }
     } = useForm({
         defaultValues,
         onSubmit: async (values, instance) => {
@@ -60,6 +60,7 @@ const PlayerForm = () => {
                 variant='primary'
                 className={styles.button}
                 disabled={!canSubmit}
+                busy={isSubmitting ? 'Add' : false}
             >
                 Add
             </Button>

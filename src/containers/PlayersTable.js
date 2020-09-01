@@ -7,8 +7,10 @@ import {
     Check,
     Button,
     Select,
-    Field
+    Field,
+    Spinner
 } from '@marketgoo/ola'
+import TablePlaceholder from 'components/TablePlaceholder'
 import { removePlayer, getPlayers } from 'store/players'
 
 const actions = [{ value: 'remove', label: 'Remove' }]
@@ -23,7 +25,12 @@ const PlayersTable = () => {
 
     return (
         <>
-            <Table responsive>
+            <Table
+                responsive
+                caption={
+                    players && players.length === 0 && 'No players created'
+                }
+            >
                 <thead>
                     <TableRow>
                         <TableCell header>Player</TableCell>
@@ -37,25 +44,29 @@ const PlayersTable = () => {
                     </TableRow>
                 </thead>
                 <tbody>
-                    {players.map(player => (
-                        <TableRow key={player.id || player.name}>
-                            <TableCell>{player.name}</TableCell>
-                            <TableCell>{player.team}</TableCell>
-                            <TableCell variant='numeric'>
-                                {player.score}
-                            </TableCell>
-                            <TableCell variant='right'>
-                                <Button
-                                    variant='destructive'
-                                    onClick={() =>
-                                        dispatch(removePlayer(player))
-                                    }
-                                >
-                                    Remove
-                                </Button>
-                            </TableCell>
-                        </TableRow>
-                    ))}
+                    {!players ? (
+                        <TablePlaceholder />
+                    ) : (
+                        players.map(player => (
+                            <TableRow key={player.id || player.name}>
+                                <TableCell>{player.name}</TableCell>
+                                <TableCell>{player.team}</TableCell>
+                                <TableCell variant='numeric'>
+                                    {player.score}
+                                </TableCell>
+                                <TableCell variant='right'>
+                                    <Button
+                                        variant='destructive'
+                                        onClick={() =>
+                                            dispatch(removePlayer(player))
+                                        }
+                                    >
+                                        Remove
+                                    </Button>
+                                </TableCell>
+                            </TableRow>
+                        ))
+                    )}
                 </tbody>
             </Table>
         </>
