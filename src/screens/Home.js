@@ -1,13 +1,8 @@
 import React from 'react'
 import PlayerForm from 'containers/PlayerForm'
 import PlayersTable from 'containers/PlayersTable'
-import {
-    Panel,
-    PanelHeader,
-    PanelContent,
-    Section,
-    SectionHeader
-} from '@marketgoo/ola'
+import SocketStatus from 'containers/SocketStatus'
+import { Panel, PanelContent } from '@marketgoo/ola'
 import styles from './Home.module.css'
 
 const Home = () => {
@@ -18,7 +13,14 @@ const Home = () => {
                 <PanelContent title='Add player'>
                     <PlayerForm />
                 </PanelContent>
-                <PanelContent title='Current players'>
+                <PanelContent
+                    title={
+                        <div className={styles.current}>
+                            <span>Current players</span>
+                            <SocketStatus />
+                        </div>
+                    }
+                >
                     <PlayersTable />
                 </PanelContent>
             </Panel>

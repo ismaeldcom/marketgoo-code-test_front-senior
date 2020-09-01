@@ -3,6 +3,12 @@
     margin: auto;
 }
 
+.current {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @media (min-width: 768px) {
     .home {
         max-width: 768px;

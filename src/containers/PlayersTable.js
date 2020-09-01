@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {
-    Table,
-    TableRow,
-    TableCell,
-    Check,
-    Button,
-    Select,
-    Field,
-    Spinner
-} from '@marketgoo/ola'
+import { Table, TableRow, TableCell, Button } from '@marketgoo/ola'
 import TablePlaceholder from 'components/TablePlaceholder'
 import { removePlayer, getPlayers } from 'store/players'
-
-const actions = [{ value: 'remove', label: 'Remove' }]
 
 const PlayersTable = () => {
     const dispatch = useDispatch()

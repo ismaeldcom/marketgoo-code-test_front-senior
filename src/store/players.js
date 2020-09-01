@@ -17,6 +17,9 @@ export const removePlayer = createAsyncThunk('players/remove', player =>
 const playersSlice = createSlice({
     name: 'players',
     initialState: null,
+    reducers: {
+        reloadPlayers: (state, { payload }) => payload
+    },
     extraReducers: {
         [getPlayers.fulfilled]: (state, { payload }) => payload,
         [getPlayers.rejected]: (state, { error }) => {

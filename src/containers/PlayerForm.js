@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import { unwrapResult } from '@reduxjs/toolkit'
 import { useForm } from 'react-form'
@@ -11,7 +11,7 @@ import styles from './PlayerForm.module.css'
 const PlayerForm = () => {
     const dispatch = useDispatch()
 
-    const defaultValues = React.useMemo(
+    const defaultValues = useMemo(
         () => ({
             name: '',
             team: '',
