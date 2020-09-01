@@ -36,7 +36,10 @@ describe('Store', () => {
         })
 
         it('should handle addPlayer', () => {
-            const firstPlayer = mockPlayers[0]
+            const firstPlayer = {
+                ...mockPlayers[0],
+                id: mockPlayers[0].name + mockPlayers[0].team
+            }
             const action = {
                 type: addPlayer.fulfilled.type,
                 payload: firstPlayer
@@ -48,7 +51,7 @@ describe('Store', () => {
             const [firstPlayer, ...othersPlayers] = mockPlayers
             const action = {
                 type: removePlayer.fulfilled.type,
-                payload: firstPlayer
+                payload: firstPlayer.id
             }
             expect(players(mockPlayers, action)).toEqual(othersPlayers)
         })

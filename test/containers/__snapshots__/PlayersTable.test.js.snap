@@ -1,273 +1,323 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snapshots PlayersTable renders placeholder 1`] = `
-<div
-  className="ola_table-container is-responsive"
->
-  <table
-    className="ola_table"
+Array [
+  <div
+    className="ola_table-container is-responsive"
   >
-    <thead>
-      <tr
-        className="ola_tableRow"
+    <table
+      className="ola_table"
+    >
+      <thead>
+        <tr
+          className="ola_tableRow"
+        >
+          <th
+            className="ola_tableCell is-check"
+          />
+          <th
+            className="ola_tableCell is-left"
+          >
+            Player
+          </th>
+          <th
+            className="ola_tableCell is-left"
+          >
+            Team
+          </th>
+          <th
+            className="ola_tableCell is-numeric"
+          >
+            Score
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          className="ola_tableRow"
+        >
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+        </tr>
+        <tr
+          className="ola_tableRow"
+        >
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+        </tr>
+        <tr
+          className="ola_tableRow"
+        >
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+        </tr>
+        <tr
+          className="ola_tableRow"
+        >
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+        </tr>
+        <tr
+          className="ola_tableRow"
+        >
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            <div
+              className="placeholder"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>,
+  <div
+    className="actions"
+  >
+    <div
+      className="ola-body"
+    >
+      Actions
+    </div>
+    <div>
+      0
+       selected
+    </div>
+    <button
+      className="ola_button is-destructive"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <span
+        className="ola_button-text"
       >
-        <th
-          className="ola_tableCell is-left"
-        >
-          Player
-        </th>
-        <th
-          className="ola_tableCell is-left"
-        >
-          Team
-        </th>
-        <th
-          className="ola_tableCell is-numeric"
-        >
-          Score
-        </th>
-        <th
-          className="ola_tableCell is-right"
-        >
-          Actions
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        className="ola_tableRow"
-      >
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-      </tr>
-      <tr
-        className="ola_tableRow"
-      >
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-      </tr>
-      <tr
-        className="ola_tableRow"
-      >
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-      </tr>
-      <tr
-        className="ola_tableRow"
-      >
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-      </tr>
-      <tr
-        className="ola_tableRow"
-      >
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          <div
-            className="placeholder"
-          />
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+        Remove
+      </span>
+    </button>
+  </div>,
+]
 `;
 
 exports[`Snapshots PlayersTable renders player 1`] = `
-<div
-  className="ola_table-container is-responsive"
->
-  <table
-    className="ola_table"
+Array [
+  <div
+    className="ola_table-container is-responsive"
   >
-    <thead>
-      <tr
-        className="ola_tableRow"
-      >
-        <th
-          className="ola_tableCell is-left"
+    <table
+      className="ola_table"
+    >
+      <thead>
+        <tr
+          className="ola_tableRow"
         >
-          Player
-        </th>
-        <th
-          className="ola_tableCell is-left"
-        >
-          Team
-        </th>
-        <th
-          className="ola_tableCell is-numeric"
-        >
-          Score
-        </th>
-        <th
-          className="ola_tableCell is-right"
-        >
-          Actions
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        className="ola_tableRow"
-      >
-        <td
-          className="ola_tableCell is-left"
-        >
-          Peter
-        </td>
-        <td
-          className="ola_tableCell is-left"
-        >
-          Pandas
-        </td>
-        <td
-          className="ola_tableCell is-numeric"
-        >
-          1
-        </td>
-        <td
-          className="ola_tableCell is-right"
-        >
-          <button
-            className="ola_button is-destructive"
-            disabled={false}
-            onClick={[Function]}
+          <th
+            className="ola_tableCell is-check"
+          />
+          <th
+            className="ola_tableCell is-left"
           >
-            <span
-              className="ola_button-text"
+            Player
+          </th>
+          <th
+            className="ola_tableCell is-left"
+          >
+            Team
+          </th>
+          <th
+            className="ola_tableCell is-numeric"
+          >
+            Score
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          className="ola_tableRow is-selectable"
+        >
+          <td
+            className="ola_tableCell is-check"
+          >
+            <label
+              className="ola_check"
             >
-              Remove
-            </span>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+              <input
+                checked={false}
+                className="ola_check-input"
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <div
+                className="ola_check-label"
+              />
+            </label>
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            Peter
+          </td>
+          <td
+            className="ola_tableCell is-left"
+          >
+            Pandas
+          </td>
+          <td
+            className="ola_tableCell is-numeric"
+          >
+            1
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>,
+  <div
+    className="actions"
+  >
+    <div
+      className="ola-body"
+    >
+      Actions
+    </div>
+    <div>
+      0
+       selected
+    </div>
+    <button
+      className="ola_button is-destructive"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <span
+        className="ola_button-text"
+      >
+        Remove
+      </span>
+    </button>
+  </div>,
+]
 `;

@@ -1,0 +1,8 @@
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid 1px var(--gray-light);
+    margin-top: var(--size-4);
+    padding-top: var(--size-4);
+}

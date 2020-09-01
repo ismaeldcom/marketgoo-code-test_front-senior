@@ -10,8 +10,8 @@ export const addPlayer = createAsyncThunk('players/add', player =>
     api.post('/players', player)
 )
 
-export const removePlayer = createAsyncThunk('players/remove', player =>
-    api.delete(`/players/${player.id}`).then(_ => player)
+export const removePlayer = createAsyncThunk('players/remove', id =>
+    api.delete(`/players/${id}`).then(_ => id)
 )
 
 const playersSlice = createSlice({
@@ -28,18 +28,23 @@ const playersSlice = createSlice({
         },
         [addPlayer.fulfilled]: (state, { payload }) => {
             notify.success(`Adding player ${payload.name}`)
-            return [...state, payload]
+            return [...state, { ...payload, id: payload.name + payload.team }]
         },
         [addPlayer.rejected]: (state, { error, meta }) => {
             notify.error(`Adding player ${meta.arg.name}`, error.message)
             return state
         },
         [removePlayer.fulfilled]: (state, { payload }) => {
-            notify.success(`Removing player ${payload.name}`)
-            return state.filter(player => player.id !== payload.id)
+            const playerToRemove = state.find(player => player.id === payload)
+            notify.success(`Removing player ${playerToRemove.name}`)
+            return state.filter(player => player.id !== payload)
         },
         [removePlayer.rejected]: (state, { error, meta }) => {
-            notify.error(`Removing player ${meta.arg.name}`, error.message)
+            const playerToRemove = state.find(player => player.id === meta.arg)
+            notify.error(
+                `Removing player ${playerToRemove.name}`,
+                error.message
+            )
             return state
         }
     }
