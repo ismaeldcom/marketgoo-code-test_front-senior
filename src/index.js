@@ -1,24 +1,20 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
 import socketIOClient from 'socket.io-client'
-import List from './components/List'
+import store from 'store'
+import Home from 'screens/Home'
+
 import './index.css'
 
-const ENDPOINT = 'http://localhost:3000'
+render(
+    <Provider store={store}>
+        <Home />
+    </Provider>,
+    document.getElementById('app')
+)
 
-const Root = () => {
-    return (
-        <>
-            <h1>League Champion</h1>
-            <List />
-        </>
-    )
-}
-
-const container = document.getElementById('app')
-ReactDOM.render(<Root />, container)
-
-const socket = socketIOClient(ENDPOINT)
+const socket = socketIOClient(process.env.API_URL)
 socket.on('update/players', data => {
     console.log(data)
 })
