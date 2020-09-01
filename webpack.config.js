@@ -1,5 +1,5 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     mode: 'development',
@@ -26,15 +26,13 @@ module.exports = {
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                            publicPath: '/public/',
-                        },
+                            publicPath: '/public/'
+                        }
                     },
-                    'css-loader',
-                ],
+                    'css-loader'
+                ]
             }
         ]
     },
-    plugins: [
-        new MiniCssExtractPlugin()
-    ]
+    plugins: [new MiniCssExtractPlugin()]
 }
