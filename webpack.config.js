@@ -1,5 +1,7 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 
 module.exports = {
@@ -13,7 +15,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: '[name].js'
+        filename: '[name].[contenthash].js'
     },
     module: {
         rules: [
@@ -49,7 +51,14 @@ module.exports = {
             }
         ]
     },
-    plugins: [new MiniCssExtractPlugin(), new Dotenv()],
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, 'src', 'index.html')
+        }),
+        new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
+        new Dotenv()
+    ],
     devServer: {
         contentBase: './src',
         hot: true
