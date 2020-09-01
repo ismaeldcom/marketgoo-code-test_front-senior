@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { unwrapResult } from '@reduxjs/toolkit'
 import { useForm } from 'react-form'
 import { Button } from '@marketgoo/ola'
 import InputField from 'components/InputField'
@@ -23,14 +24,10 @@ const PlayerForm = () => {
         meta: { canSubmit, isSubmitting }
     } = useForm({
         defaultValues,
-        onSubmit: async (values, instance) => {
-            try {
-                await dispatch(addPlayer(values))
-                instance.reset()
-            } catch (error) {
-                console.log(error)
-            }
-        }
+        onSubmit: (values, instance) =>
+            dispatch(addPlayer(values))
+                .then(unwrapResult)
+                .then(() => instance.reset())
     })
 
     return (
